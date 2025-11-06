@@ -2,6 +2,7 @@
 import qrcode
 from qrcode.constants import ERROR_CORRECT_M
 from PIL import Image
+from qrcode.image.pil import PilImage
 
 
 def create_qr_code_image(text: str, size: int) -> Image.Image:
@@ -13,7 +14,7 @@ def create_qr_code_image(text: str, size: int) -> Image.Image:
     )
     qr.add_data(text)
     qr.make(fit=True)
-    qr_img = qr.make_image(fill_color="black", back_color="white").convert("RGB")
+    qr_img = qr.make_image(fill_color="black", back_color="white", image_factory=PilImage).convert("RGB")
 
     # Resize to desired size using a good resampling filter
     qr_img = qr_img.resize((size, size), Image.LANCZOS)
