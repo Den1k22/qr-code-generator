@@ -1,8 +1,5 @@
 
 import wx
-# import qrcode
-from qrcode.constants import ERROR_CORRECT_M
-from PIL import Image
 
 from constants.qr_code import IMAGE_SIZE
 from utils.gui import convert_pil_image_to_wx_bitmap
@@ -16,7 +13,7 @@ class QRGeneratorPanel(wx.Panel):
     def __init__(self, parent):
         super().__init__(parent)
 
-        self.current_pil_image = None  # store the latest PIL image (512x512)
+        self.current_pil_image = None
 
         self.qr_code_text_ctrl = QRCodeTextCtrl(self, on_change=self.on_text_change)
 
@@ -36,15 +33,7 @@ class QRGeneratorPanel(wx.Panel):
         sizer.Add(self.qr_code_save_button, 0, wx.ALIGN_CENTER | wx.BOTTOM, 8)
         self.SetSizer(sizer)
 
-        self.on_text_change("")
-
-    def _update_display_with_blank(self):
-        # white background placeholder
-        img = Image.new("RGB", (IMAGE_SIZE, IMAGE_SIZE), "white")
-        self.current_pil_image = img
-        bmp = convert_pil_image_to_wx_bitmap(img)
-        self.img_ctrl.SetBitmap(wx.BitmapBundle.FromBitmap(bmp))
-        self.Layout()
+        self.on_text_change(self.qr_code_text_ctrl.GetValue())
 
     def on_text_change(self, new_text: str) -> None:
         qr_code_image = create_qr_code_image(new_text, IMAGE_SIZE)
