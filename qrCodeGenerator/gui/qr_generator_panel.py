@@ -4,12 +4,12 @@ import wx
 from qrcode.constants import ERROR_CORRECT_M
 from PIL import Image
 
-from qrCodeGenerator.constants.qr_code import IMAGE_SIZE
-from qrCodeGenerator.utils.gui import convert_pil_image_to_wx_bitmap
-from qrCodeGenerator.utils.qr_code import create_qr_code_image
+from constants.qr_code import IMAGE_SIZE
+from utils.gui import convert_pil_image_to_wx_bitmap
+from utils.qr_code import create_qr_code_image
 
-from qrCodeGenerator.gui.qr_code_save_button import QRCodeSaveButton
-from qrCodeGenerator.gui.qr_code_text_ctrl import QRCodeTextCtrl
+from gui.qr_code_save_button import QRCodeSaveButton
+from gui.qr_code_text_ctrl import QRCodeTextCtrl
 
 
 class QRGeneratorPanel(wx.Panel):

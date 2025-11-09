@@ -1,7 +1,7 @@
 
 import wx
 
-from qrCodeGenerator.gui.main_frame import MainFrame
+from gui.main_frame import MainFrame
 
 
 class QRCodeGeneratorApp(wx.App):
@@ -9,3 +9,8 @@ class QRCodeGeneratorApp(wx.App):
         frame = MainFrame()
         frame.Show()
         return True
+
+
+if __name__ == "__main__":
+    app = QRCodeGeneratorApp()
+    app.MainLoop()

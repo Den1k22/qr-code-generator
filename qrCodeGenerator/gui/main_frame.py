@@ -1,8 +1,8 @@
 
 import wx
 
-from qrCodeGenerator.constants.gui import WINDOW_TITLE
-from qrCodeGenerator.gui.qr_generator_panel import QRGeneratorPanel
+from constants.gui import WINDOW_TITLE
+from gui.qr_generator_panel import QRGeneratorPanel
 
 
 class MainFrame(wx.Frame):
