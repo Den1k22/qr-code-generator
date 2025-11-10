@@ -131,3 +131,6 @@ dmypy.json
 # custom
 .vscode/
 points.txt
+
+# macOS
+.DS_Store
