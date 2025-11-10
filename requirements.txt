@@ -1,5 +1,10 @@
 colorama==0.4.6; sys_platform == "win32"
+Nuitka==2.8.4
+ordered-set==4.1.0
 pillow==12.0.0
 qrcode==8.2
+setuptools==80.9.0
 types-Pillow==10.2.0.20240822
+wheel==0.45.1
 wxPython==4.2.4
+zstandard==0.25.0
